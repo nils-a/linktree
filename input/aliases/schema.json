@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/alias",
+    "definitions": {
+        "alias": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$schema": {
+                    "description": "The URI of the JSON schema.",
+                    "type": "string"
+                },
+                "alias": {
+                    "type": "string",
+                    "description": "This is the main domain/alias of this redirect."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "This is the name of the target of this redirect."
+                },
+                "target": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "This is the target of this redirect."
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "tags for a little tag-cloud. Not sure if this will ever be used."
+                },
+                "alternatives": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "alternative aliases for the redirect."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Some nice text about the target of this redirect."
+                }
+            },
+            "required": [
+                "alias",
+                "target",
+                "name",
+                "alternatives",
+                "tags"
+            ],
+            "title": "alias"
+        }
+    }
+}

@@ -1,0 +1,33 @@
+name: Deploy
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository 
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-dotnet@v3.0.3
+        with:
+          dotnet-version: 7.0.100
+
+      - name: Build Site
+        shell: pwsh
+        run: dotnet run
+
+      - name: Install Wrangler CLI
+        run: npm install --global wrangler
+
+      - name: deploy
+        #if: github.ref == 'refs/heads/main'
+        run: wrangler pages publish output --commit-dirty=true --project-name=my-linktree --branch="${{ github.ref_name }}" --commit-hash="${{ github.sha }}"

@@ -1,0 +1,8 @@
+Title: All aliases
+NoContainer: false
+NoTitle: false
+---
+@inherits Statiq.Razor.StatiqRazorPage<object>
+
+
+@await Html.PartialAsync("Shared/_table.cshtml", @Outputs.FromPipeline("Data"))

@@ -1,0 +1,15 @@
+ArchivePipelines: Data
+ArchiveKey: => GetList<string>("tags")
+Title: Tags
+DestinationPath: "tags/index.html"
+---
+@inherits Statiq.Razor.StatiqRazorPage<IDocument>
+
+<div class="container-sm-height">
+
+@if (Document.ContainsKey(Keys.GroupKey))
+{
+  @await Html.PartialAsync("Shared/_table.cshtml", Document.GetChildren().GroupBy(x => x.Source).Select(x => x.First()))
+}
+   
+</div>

@@ -1,0 +1,8 @@
+{
+    "$schema": "./schema.json",
+    "alias": "keyoxide",
+    "name": "Keyoxide",
+    "target": "https://keyoxide.org/cca1befdfb846890646d43df0eafed177e6a41e9",
+    "tags": ["Verify"],
+    "alternatives": []
+}

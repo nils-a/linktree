@@ -1,0 +1,39 @@
+@inherits Statiq.Razor.StatiqRazorPage<IEnumerable<IDocument>>
+
+@{
+    var tableId = @Html.GenerateIdFromName("table-" + Guid.NewGuid().ToString("d"));
+}
+
+<table id="@tableId" class="stripe">
+    <thead>
+    <tr><td>Name</td><td>Alias</td><td>Additional</td><td>Url</td></tr>
+    </thead>
+    <tbody>
+    @foreach (var doc in Model)
+    {
+        <tr>
+            <td><a href="@(doc["target"])">@doc["name"]</a></td>
+            <td><a href="//@(doc["alias"]).@(doc["RootDomain"])/">@doc["alias"]</a></td>
+            <td>
+                @foreach (var alt in doc.GetList<string>("alternatives"))
+                {
+                    <span><a href="@doc["target"]">@alt</a></span>
+                }
+            </td>
+            <td><a href="@doc["target"]">@doc["target"]</a></td>
+        </tr>
+    }
+    <tbody>
+</table>
+
+<script>
+    $("#@tableId").DataTable({
+        paging: true,
+        ordering: true,
+        info: true,
+        lengthMenu: [
+            [25, 50, 100, -1],
+            [25, 50, 100, 'All'],
+        ],
+    });
+</script>

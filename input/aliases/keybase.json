@@ -1,0 +1,8 @@
+{
+    "$schema": "./schema.json",
+    "alias": "Keybase",
+    "name": "Keybase",
+    "target": "https://keybase.io/nilsa/",
+    "tags": ["Verify"],
+    "alternatives": []
+}

@@ -1,0 +1,8 @@
+{
+    "$schema": "./schema.json",
+    "alias": "name",
+    "name": "Say my Name",
+    "target": "http://ipa-reader.xyz/?text=%CB%88ni%CB%90ls&voice=Marlene",
+    "tags": ["Fun"],
+    "alternatives": []
+}

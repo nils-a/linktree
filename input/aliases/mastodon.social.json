@@ -1,0 +1,8 @@
+{
+    "$schema": "./schema.json",
+    "alias": "mastodon",
+    "name": "Mastodon",
+    "target": "https://mastodon.social/@nils_andresen",
+    "tags": ["Social", "Blog", "Microblog"],
+    "alternatives": []
+}
