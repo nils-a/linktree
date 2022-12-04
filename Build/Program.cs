@@ -14,5 +14,7 @@ await Bootstrapper
         engine.Pipelines.Remove(nameof(Sitemap));
     })
     .AddPipeline<SubdomainRedirects>()
+    .WithWellKnown(x => x
+        .WebFingerAlias("nils_andresen@mastodon.social"))
     .RunAsync();
 
