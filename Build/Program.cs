@@ -1,4 +1,5 @@
 ﻿using LinkTree.Build;
+using Statiq.Extensions.WellKnown;
 using Statiq.Web.Pipelines;
 
 await Bootstrapper
@@ -7,6 +8,7 @@ await Bootstrapper
     .AddSetting("SiteTitle", "Nils Andresen [Me]")
     .AddSetting("EditRoot", "https://github.com/nils-a/linktree/edit/main/input")
     .AddSetting("RootDomain", "nils-a.me")
+    .AddSetting(SettingKeys.WebFingerAlias.FromTemplate, "@nils_andresen@dotnet.social")
     .ConfigureFileSystem(fs => { fs.ExcludedPaths.Add("aliases/schema.json"); })
     .ConfigureEngine(engine =>
     {
@@ -15,7 +17,6 @@ await Bootstrapper
         engine.Pipelines.Remove(nameof(Redirects));
     })
     .AddPipeline<SubdomainRedirects>()
-    .WithWellKnown(x => x
-        .WebFingerAlias("nils_andresen@mastodon.social"))
+    .AddPipeline<WellKnownFolderPipeline>()
     .RunAsync();
 
