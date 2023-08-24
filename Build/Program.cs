@@ -12,6 +12,7 @@ await Bootstrapper
     {
         engine.Pipelines.Remove(nameof(Feeds));
         engine.Pipelines.Remove(nameof(Sitemap));
+        engine.Pipelines.Remove(nameof(Redirects));
     })
     .AddPipeline<SubdomainRedirects>()
     .WithWellKnown(x => x
