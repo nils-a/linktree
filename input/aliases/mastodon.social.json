@@ -1,8 +1,8 @@
 {
     "$schema": "./schema.json",
-    "alias": "dotnet.social",
+    "alias": "mastodon",
     "name": "Mastodon",
     "target": "https://dotnet.social/@nils_andresen",
     "tags": ["Social", "Blog", "Microblog"],
-    "alternatives": []
+    "alternatives": ["dotnet.social"]
 }
