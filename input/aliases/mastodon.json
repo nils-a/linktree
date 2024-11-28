@@ -4,5 +4,5 @@
     "name": "Mastodon",
     "target": "https://dotnet.social/@nils_andresen",
     "tags": ["Social", "Blog", "Microblog"],
-    "alternatives": ["dotnet.social"]
+    "alternatives": ["dotnet.social", "fediverse"]
 }

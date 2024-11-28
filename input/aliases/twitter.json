@@ -1,8 +1,0 @@
-{
-    "$schema": "./schema.json",
-    "alias": "twitter",
-    "name": "Twitter",
-    "target": "https://twitter.com/nils_andresen",
-    "tags": ["Social", "Blog", "Microblog"],
-    "alternatives": ["I prefer mastodon!"]
-}

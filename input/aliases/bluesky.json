@@ -1,0 +1,8 @@
+{
+    "$schema": "./schema.json",
+    "alias": "bluesky",
+    "name": "Bluesky",
+    "target": "https://bsky.app/profile/nils-andresen.bsky.social",
+    "tags": ["Social", "Blog", "Microblog"],
+    "alternatives": ["bsky"]
+}
