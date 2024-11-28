@@ -1,0 +1,4 @@
+{
+    "name": "Blog",
+    "image": "mcr.microsoft.com/dotnet/sdk:latest"
+}
